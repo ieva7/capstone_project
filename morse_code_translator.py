@@ -2,7 +2,7 @@
 
 def convert_english_to_morse(line: str) -> str:
     "Converts a single english letter/number into morse line"
-    morse_vocabulary = {"a": ".--", "b": "-...", "c": "-.-.", "d": "-..", 
+    morse_vocabulary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..", 
     "e": ".", "f": "..-.", "g": "--.", "h": "....", "i": "..", "j": ".---", 
     "k": "-.-", "l": ".-..", "m": "--", "n": "-.", "o": "---", "p": ".--.", 
     "l": ".-..", "m": "--", "n": "-.", "o": "---", "p": ".--.", "q": "--.-",
@@ -10,10 +10,15 @@ def convert_english_to_morse(line: str) -> str:
     "x": "-..-", "y": "-.--", "z": "--..", "1": ".----", "2": "..---", "3": 
     "...--", "4": "....-", "5": ".....", "6": "-....", "7": "--...", "8": 
     "---..", "9": "----.", "0": "-----", ".": ".-.-.-", ",": "--..--", "?": 
-    "..--..", "/": "-..-.", " ": " "}
+    "..--..", "/": "-..-.", " ": "/"}
 
     morse_code = ""
-    non_morse_code = ""
     for character in line:
-        if ()
+        if (character in morse_vocabulary.keys()):
+            morse_code += morse_vocabulary[character] + " "
+        else:
+            morse_code += " X "
+    return morse_code[:-1]
+
+print(convert_english_to_morse("cat"))
 
